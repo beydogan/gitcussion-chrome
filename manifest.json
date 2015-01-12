@@ -7,16 +7,19 @@
 
   "permissions": [
     "activeTab",
-    "http://localhost:3000/*"
+    "https://gitcuss.herokuapp.com/*"
   ],
   "content_scripts": [
     {
       "matches": ["http://www.github.com/*", "https://github.com/*/*"],
-      //"css": ["mystyles.css"],
-      "js": ["app.js"]
+      "css": ["style.css"],
+      "js": ["jquery.js","app.js", "handlebars.js"]
     }
   ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "browser_action": {
-  }
+  },
+  "web_accessible_resources": [
+    "templates/*"
+  ]
+  
 }

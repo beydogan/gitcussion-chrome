@@ -1,0 +1,13 @@
+#gitcussion .markdown-body {
+background-color: #fff;
+border: 1px solid #ddd;
+border-bottom-left-radius: 3px;
+border-bottom-right-radius: 3px;
+padding: 30px;
+word-wrap: break-word;
+}
+
+#gitcussion h3.collapsed{
+	border-radius: 3px;
+	border-bottom: 1px solid #d8d8d8;
+}
