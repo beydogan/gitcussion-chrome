@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "One-click Kittens",
-  "description": "This extension demonstrates a browser action with kittens.",
+  "name": "Gitcussion",
+  "description": "Learn more, comment, review and rate Github repositories.",
   "version": "1.0",
 
   "permissions": [
