@@ -24,6 +24,12 @@ Handlebars.getTemplate = function(name) {
     return Handlebars.templates[name];
 };
 
+Handlebars.registerHelper('parse-comment', function(options) {
+    str = options.fn(this);
+    str = str.replace(/(^|\W+)\@([\w\-]+)/gm,'$1<a href="http://github.com/$2" class="user-mention" target="_blank">@$2</a>');
+    return str
+});
+
 var addGitcussionBox = function (repo){
 	var template = Handlebars.getTemplate('gitcussion_box');
 	Handlebars.registerPartial("comment", Handlebars.getTemplate('comment'));

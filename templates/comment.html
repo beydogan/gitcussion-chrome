@@ -21,7 +21,7 @@
         <div class="edit-comment-hide">
           <div class="comment-body markdown-body markdown-format js-comment-body">
               <p>
-                {{comment}}
+               {{#parse-comment}}{{comment}}{{/parse-comment}}
               </p>
           </div>
         </div>
