@@ -1,6 +1,5 @@
 {
   "manifest_version": 2,
-
   "name": "Gitcussion",
   "description": "Learn more, comment, review and rate Github repositories.",
   "version": "1.0",
@@ -13,7 +12,7 @@
     {
       "matches": ["http://www.github.com/*", "https://github.com/*/*"],
       "css": ["style.css"],
-      "js": ["jquery.js","app.js", "handlebars.js"]
+      "js": ["jquery.js","gitcussion.js", "app.js", "handlebars.js"]
     }
   ],
   "browser_action": {
