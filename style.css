@@ -1,13 +1,37 @@
 #gitcussion .markdown-body {
-background-color: #fff;
-border: 1px solid #ddd;
-border-bottom-left-radius: 3px;
-border-bottom-right-radius: 3px;
-padding: 30px;
-word-wrap: break-word;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	padding: 30px;
+	word-wrap: break-word;
 }
 
 #gitcussion h3.collapsed{
 	border-radius: 3px;
 	border-bottom: 1px solid #d8d8d8;
+}
+
+#gitcussion {
+	width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	border-top: 1px solid #eee;
+}
+
+#gitcussion h1{
+	padding-left: 40px;
+}
+
+#gitcussion #gitcussion-comments{
+	margin-top: 20px;
+}
+
+.pagehead.repohead h1 .octicon-mark-github {
+position: absolute;
+left: 0;
+top: 12px;
+line-height: 32px;
+margin-top: -13px;
+color: #bbb;
 }

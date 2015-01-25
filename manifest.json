@@ -11,14 +11,15 @@
   "content_scripts": [
     {
       "matches": ["http://www.github.com/*", "https://github.com/*/*"],
-      "css": ["style.css"],
+      "css": ["style.css", "css/font-awesome.min.css"],
       "js": ["jquery.js","gitcussion.js", "app.js", "handlebars.js"]
     }
   ],
   "browser_action": {
   },
   "web_accessible_resources": [
-    "templates/*"
+    "templates/*",
+    "fonts/*"
   ]
   
 }

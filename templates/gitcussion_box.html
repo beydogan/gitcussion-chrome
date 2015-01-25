@@ -1,8 +1,38 @@
-	<h1 class="entry-title public">
-	   	<a href="/beydogan/gitcussion">{{repo.fullname}} on Gitcussion</a></strong>
-	</h1>
-    <article class="">
-	    {{#each repo.comments}}
-	    	{{> comment}}
-	  	{{/each}}
-  	</article>
+<div class="pagehead repohead instapaper_ignore readability-menu">
+  	<div class="container">
+		<ul class="pagehead-actions gitcussion-actions">
+			<li>
+	          	<a href="#" class="minibutton with-count">
+	          		<i class="fa fa-stack-overflow"></i>
+	            	Stack Overflow
+	          	</a>
+	          <a href="#" class="social-count">{{repo.so_open}}/{{repo.so_total}}</a>
+        	</li>
+			<li>
+	          	<a href="#" class="minibutton with-count">
+	          		<i class="fa fa-diamond"></i>
+	            	Score
+	          	</a>
+	          <a href="#" class="social-count">{{repo.score}}</a>
+        	</li>
+			<li>
+	          	<a href="#" class="minibutton with-count">
+	          		<i class="fa fa-comments"></i>
+	            	Comments
+	          	</a>
+	          <a href="#" class="social-count">{{repo.comments_count}}</a>
+        	</li>
+		</ul>
+	    <h1 class="entry-title public">
+	      <span class="mega-octicon octicon-mark-github"></span>
+	      <a href="/beydogan/gitcussion">{{repo.fullname}} on Gitcussion</a>
+	    </h1>
+  	</div><!-- /.container -->
+    <div class="container" id="gitcussion-comments">
+	 	<article class="">
+		    {{#each repo.comments}}
+		    	{{> comment}}
+		  	{{/each}}
+	  	</article>
+    </div>
+</div>

@@ -35,7 +35,7 @@ gitcussion.prototype.parseData = function(data){
 }
 
 gitcussion.prototype.setupGitcussionBox = function(){
-	$("#readme").after("<div id=gitcussion>Gitcussion is loading..</div>");
+	$("#readme").parent().parent().parent().after("<div id=gitcussion>Gitcussion is loading..</div>");
 	this.addLoadingGif();
 }
 
@@ -89,6 +89,10 @@ gitcussion.prototype.setBindings = function(){
 		$(this).find("span").toggleClass("octicon-triangle-down");
 		$(this).find("span").toggleClass("octicon-triangle-up");
 	});
+
+	$("#gitcussion").find(".gitcussion-actions").find("li a").click(function(e){
+		e.preventDefault();
+	})
 }
 
 gitcussion.prototype.addLoadingGif = function(){
