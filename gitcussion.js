@@ -2,7 +2,10 @@ var gitcussion = function(repoName){
 	this.templatesUrl = chrome.extension.getURL('templates/');
 	this.repoName = repoName
 	this.apiBase = "https://gitcuss.herokuapp.com/";
-	this.setup();
+
+	if(repoName == window.location.pathname.substr(1)){
+		this.setup();
+	}
 }
 
 gitcussion.prototype.setup = function(){
