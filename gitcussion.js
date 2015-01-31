@@ -100,6 +100,8 @@ gitcussion.prototype.setBindings = function(){
 
 gitcussion.prototype.addLoadingGif = function(){
 	var gifUrl = "https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif"
+	var div = $('<div />',{ class: "text-center" });
 	var img = $('<img />',{ src: gifUrl});
-	$('#gitcussion').html(img)
+	div.html(img)
+	$('#gitcussion').html(div)
 }
