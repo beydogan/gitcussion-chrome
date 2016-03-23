@@ -1,52 +1,54 @@
-<div class="repository-with-sidebar with-full-navigation">
+<div class="">
+	<div class="overall-summary overall-summary-bottomless gitcussion-summary">
+		<div class="stats-switcher-viewport">
+			<div class="stats-switcher-wrapper">
+				<ul class="numbers-summary">
+					<li class="commits">
+						<a>
+							<span class="num text-emphasized">
+								5
+							</span>
+							Comments
+						</a>
+					</li>
+					<li>
+						<a >
+							<span class="num text-emphasized">
+								10
+							</span>
+							Upvotes
+						</a>
+					</li>
 
-	<div class="repository-sidebar clearfix">
-	  	<nav class="sunken-menu repo-nav" role="navigation" >
-	  		<ul class="sunken-menu-group">
-			    <li class="tooltipped tooltipped-w" aria-label="Code">
-			      <a href="/beydogan/gitcussion" aria-label="Code" class="sunken-menu-item" >
-			        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
-				</li>
-	  		</ul>
-		</nav>
-		<div class="repository-content">
-			<div class="boxed-group flush clearfix announce instapaper_body rdoc" id="gitcussion-comments">
-			 	<article class="">
-				    {{#each repo.comments}}
-				    	{{> comment}}
-				  	{{/each}}
-			  	</article>
+					<li>
+						<a >
+							<span class="num text-emphasized">
+								2
+							</span>
+							Downvotes
+						</a>
+					</li>
+
+					<li>
+						<a >
+							<span class="num text-emphasized">
+								300
+							</span>
+							Points
+						</a>
+
+					</li>
+				</ul>
 			</div>
-	    </div>
-</div>
-<!--   	<div class="container">
-		<ul class="pagehead-actions gitcussion-actions">
-			<li>
-	          	<a href="#" class="minibutton with-count">
-	          		<i class="fa fa-stack-overflow"></i>
-	            	Stack Overflow
-	          	</a>
-	          <a href="#" class="social-count">{{repo.so_open}}/{{repo.so_total}}</a>
-        	</li>
-			<li>
-	          	<a href="#" class="minibutton with-count">
-	          		<i class="fa fa-diamond"></i>
-	            	Score
-	          	</a>
-	          <a href="#" class="social-count">{{repo.score}}</a>
-        	</li>
-			<li>
-	          	<a href="#" class="minibutton with-count">
-	          		<i class="fa fa-comments"></i>
-	            	Comments
-	          	</a>
-	          <a href="#" class="social-count">{{repo.comments_count}}</a>
-        	</li>
-		</ul>
-	    <h1 class="entry-title public">
-	      <span class="mega-octicon octicon-mark-github"></span>
-	      <a href="/beydogan/gitcussion">{{repo.fullname}} on Gitcussion</a>
-	    </h1>
-  	</div><!-- /.container --> -->
-    
+		</div>
+	</div>
+	<div class="repository-content">
+		<div class="boxed-group flush clearfix announce instapaper_body rdoc" id="gitcussion-comments">
+		 	<article class="">
+			    {{#each repo.comments}}
+			    	{{> comment}}
+			  	{{/each}}
+		  	</article>
+		</div>
+  </div>
 </div>

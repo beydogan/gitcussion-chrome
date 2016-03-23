@@ -1,4 +1,4 @@
-var gitcussion = function(repoName){
+var Gitcussion = function(repoName){
 	this.templatesUrl = chrome.extension.getURL('templates/');
 	this.repoName = repoName
 	this.apiBase = "https://gitcuss.herokuapp.com/";
@@ -8,16 +8,16 @@ var gitcussion = function(repoName){
 	}
 }
 
-gitcussion.prototype.setup = function(){
+Gitcussion.prototype.setup = function(){
 	this.setupHandlebars();
 	this.setupGitcussionBox();
 }
 
-gitcussion.prototype.run = function(){
+Gitcussion.prototype.run = function(){
     this.loadData();
 }
 
-gitcussion.prototype.loadData = function(){
+Gitcussion.prototype.loadData = function(){
 	var _this = this;
 	var url = this.apiBase + "r/" + this.repoName;
 	$.ajax({
@@ -32,17 +32,17 @@ gitcussion.prototype.loadData = function(){
 	});
 }
 
-gitcussion.prototype.parseData = function(data){
+Gitcussion.prototype.parseData = function(data){
 	$("#gitcussion").html(this.addGitcussionBox(data));
 	this.setBindings();
 }
 
-gitcussion.prototype.setupGitcussionBox = function(){
+Gitcussion.prototype.setupGitcussionBox = function(){
 	$("#readme").parent().parent().parent().after("<div id=gitcussion>Gitcussion is loading..</div>");
 	this.addLoadingGif();
 }
 
-gitcussion.prototype.setupHandlebars = function(){
+Gitcussion.prototype.setupHandlebars = function(){
 	Handlebars.templatesUrl = this.templatesUrl;
 
 	Handlebars.getTemplate = function(name) {
@@ -65,7 +65,7 @@ gitcussion.prototype.setupHandlebars = function(){
     this.registerHandlebarsHelpers();
 }
 
-gitcussion.prototype.registerHandlebarsHelpers = function(){
+Gitcussion.prototype.registerHandlebarsHelpers = function(){
     Handlebars.registerHelper('parse-comment', function(options) {
         str = options.fn(this);
         str = str.replace(/(^|\W+)\@([\w\-]+)/gm,'$1<a href="http://github.com/$2" class="user-mention" target="_blank">@$2</a>');
@@ -73,11 +73,11 @@ gitcussion.prototype.registerHandlebarsHelpers = function(){
     });
 }
 
-gitcussion.prototype.addBox = function(){
+Gitcussion.prototype.addBox = function(){
 	console.log("boxbox")
 }
 
-gitcussion.prototype.addGitcussionBox = function (repo){
+Gitcussion.prototype.addGitcussionBox = function (repo){
 	var template = Handlebars.getTemplate('gitcussion_box');
 	Handlebars.registerPartial("comment", Handlebars.getTemplate('comment'));
 	var context = {repo: repo};
@@ -85,7 +85,7 @@ gitcussion.prototype.addGitcussionBox = function (repo){
 	return html
 };
 
-gitcussion.prototype.setBindings = function(){
+Gitcussion.prototype.setBindings = function(){
 	$("#gitcussion").on("click", "h1", function(){
 		$("#gitcussion > article").slideToggle();
 		$(this).toggleClass("collapsed");
@@ -98,7 +98,7 @@ gitcussion.prototype.setBindings = function(){
 	})
 }
 
-gitcussion.prototype.addLoadingGif = function(){
+Gitcussion.prototype.addLoadingGif = function(){
 	var gifUrl = "https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif"
 	var div = $('<div />',{ class: "text-center" });
 	var img = $('<img />',{ src: gifUrl});

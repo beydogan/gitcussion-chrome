@@ -35,3 +35,7 @@ line-height: 32px;
 margin-top: -13px;
 color: #bbb;
 }
+
+#gitcussion .gitcussion-summary{
+	border-bottom: 1px solid #ddd;
+}
