@@ -61,8 +61,9 @@ Gitcussion.prototype.setupHandlebars = function(){
         }
         return Handlebars.templates[name];
     };
-
-    this.registerHandlebarsHelpers();
+	Handlebars.registerPartial("summary", Handlebars.getTemplate('summary'));
+	Handlebars.registerPartial("comment_box", Handlebars.getTemplate('comment_box'));
+  this.registerHandlebarsHelpers();
 }
 
 Gitcussion.prototype.registerHandlebarsHelpers = function(){
