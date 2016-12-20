@@ -16,7 +16,6 @@
 	width: 980px;
 	margin-right: auto;
 	margin-left: auto;
-	border-top: 1px solid #eee;
 }
 
 #gitcussion h1{
@@ -25,6 +24,7 @@
 
 #gitcussion #gitcussion-comments{
 	margin-top: 20px;
+	margin-bottom: 0px;
 }
 
 .pagehead.repohead h1 .octicon-mark-github {
@@ -38,4 +38,10 @@ color: #bbb;
 
 #gitcussion .gitcussion-summary{
 	border-bottom: 1px solid #ddd;
+}
+
+#gitcussion .btn-gitcussion{
+	border-top: 0;
+	border-bottom: 0;
+	border-radius: 0;
 }

@@ -5,37 +5,24 @@
         <li class="commits">
           <a>
             <span class="num text-emphasized">
-              5
+              {{repo.comments_count}}
             </span>
             Comments
           </a>
         </li>
-        <li>
-          <a >
-            <span class="num text-emphasized">
-              10
-            </span>
-            Upvotes
-          </a>
-        </li>
 
         <li>
           <a >
             <span class="num text-emphasized">
-              2
-            </span>
-            Downvotes
-          </a>
-        </li>
-
-        <li>
-          <a >
-            <span class="num text-emphasized">
-              300
+              {{repo.score}}
             </span>
             Points
           </a>
-
+        </li>
+        <li>
+        	<a href="http://www.gitcussion.com/r/{{repo.fullname}}" class="btn btn-lg btn-gitcussion" target="_blank">
+        	  Leave a comment on Gitcussion?
+          </a>
         </li>
       </ul>
     </div>

@@ -2,6 +2,7 @@ var Gitcussion = function(repoName){
 	this.templatesUrl = chrome.extension.getURL('templates/');
 	this.repoName = repoName
 	this.apiBase = "https://gitcuss.herokuapp.com/";
+	this.repoUrl = this.apiBase + "r/" + this.repoName;
 
 	if(repoName == window.location.pathname.substr(1)){
 		this.setup();
@@ -19,10 +20,9 @@ Gitcussion.prototype.run = function(){
 
 Gitcussion.prototype.loadData = function(){
 	var _this = this;
-	var url = this.apiBase + "r/" + this.repoName;
 	$.ajax({
-		url: url,
-		success: function(data){
+		url: this.repoUrl,
+		success: function(data) {
 			_this.parseData(data);
 		},
 		beforeSend: function (request)
@@ -62,7 +62,6 @@ Gitcussion.prototype.setupHandlebars = function(){
         return Handlebars.templates[name];
     };
 	Handlebars.registerPartial("summary", Handlebars.getTemplate('summary'));
-	Handlebars.registerPartial("comment_box", Handlebars.getTemplate('comment_box'));
   this.registerHandlebarsHelpers();
 }
 
@@ -74,15 +73,11 @@ Gitcussion.prototype.registerHandlebarsHelpers = function(){
     });
 }
 
-Gitcussion.prototype.addBox = function(){
-	console.log("boxbox")
-}
-
 Gitcussion.prototype.addGitcussionBox = function (repo){
 	var template = Handlebars.getTemplate('gitcussion_box');
 	Handlebars.registerPartial("comment", Handlebars.getTemplate('comment'));
 	var context = {repo: repo};
-	var html    = template(context);
+	var html = template(context);
 	return html
 };
 
@@ -97,8 +92,8 @@ Gitcussion.prototype.setBindings = function(){
 	$("#gitcussion").find(".gitcussion-actions").find("li a").click(function(e){
 		e.preventDefault();
 	})
-}
 
+}
 Gitcussion.prototype.addLoadingGif = function(){
 	var gifUrl = "https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif"
 	var div = $('<div />',{ class: "text-center" });

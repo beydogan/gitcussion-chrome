@@ -6,9 +6,14 @@
 		 	<article class="">
 			    {{#each repo.comments}}
 			    	{{> comment}}
+					{{else}}
+						<div class="blankslate">
+							<h3>{{repo.fullname}} on Gitcussion</h3>
+							<p>No comments about {{repo.fullname}} yet. <a href="https://www.gitcussion.com/r/{{repo.fullname}}" href="_blank">Want to leave one?</a></p>
+						</div>
 			  	{{/each}}
 		  	</article>
 		</div>
-		{{> comment_box }}
+		<h4 class="pull-right">provided by <a href="https://www.gitcussion.com/" href="_blank">Gitcussion</a></h4>
   </div>
 </div>
