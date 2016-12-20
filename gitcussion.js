@@ -1,7 +1,7 @@
 var Gitcussion = function(repoName){
 	this.templatesUrl = chrome.extension.getURL('templates/');
 	this.repoName = repoName
-	this.apiBase = "https://gitcuss.herokuapp.com/";
+	this.apiBase = "https://gitcussion.com/";
 	this.repoUrl = this.apiBase + "r/" + this.repoName;
 
 	if(repoName == window.location.pathname.substr(1)){
